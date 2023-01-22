@@ -1,0 +1,8 @@
+.controller{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items:center;
+    width: 100%;
+    margin-bottom: 15px;
+}

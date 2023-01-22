@@ -1,0 +1,13 @@
+.markquee-wrapper{
+    display: block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-top: auto;
+    opacity: 1;
+}
+
+.markquee-wrapper-hidden{
+    opacity: 0;
+}
+
+

@@ -1,0 +1,69 @@
+.settings{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    
+}
+
+.settings__button{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 35px;
+    height: 35px;
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    color: #F4F4F4;
+}
+.settings__button:hover{
+    animation-duration: 0.3s;
+    animation-name: rotate;  
+}
+.settings__button:active{
+    transform: scale(110%);
+    transition: transform 0.1s linear;
+}
+
+@keyframes rotate {
+       from{
+        transform: rotateZ(0deg);
+       } 
+       to{
+        transform: rotateZ(60deg);
+        }
+}
+
+.settings__items{
+    max-width: 0;
+    height: 35px;
+    position: absolute;
+    right: 35px;
+    top: 0;
+    background-color: #F4F4F4;;
+    z-index: 2;
+    transition: max-width 0.3s ease-in;
+    overflow: hidden;
+    display: flex;
+    border-radius: 8px;
+}
+
+.settings__items-active{
+    max-width: 80px;
+    transition: max-width 0.3s ease-in;
+}
+
+.items__button{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s linear;
+}
+
+.items__button:hover{
+    background-color: rgb(179, 202, 251);
+}

@@ -1,0 +1,34 @@
+.switch{
+    display: flex;
+    align-items:center;
+    position: relative;
+    width: 51px;
+    height: 30px;
+    background: #366EFF;
+    border-radius: 20px;
+    padding-left: 2.5px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.switch__thumb{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #F4F4F4;
+    transition: all 0.2s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-thumb{
+    transform: translateX(85%); 
+    transition: transform 0.2s linear;
+}
+.active-background{
+    background: #10C200;
+    transition: background 0.2s linear;
+}
+.switch_editable{
+    background: #3b3c3c;
+}

@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.header h1{
+    font-family: 'Actor';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #F4F4F4;
+}
+

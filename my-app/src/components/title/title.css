@@ -1,0 +1,10 @@
+.title{
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: #F4F4F4;
+}
+
+.title-completed{
+    text-decoration: line-through;
+}

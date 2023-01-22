@@ -1,0 +1,56 @@
+.old-todo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px; 
+    background: #282828;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    padding: 19px 15px;
+    position: relative;
+    max-height: 79px;
+    margin-bottom: 32px;
+}
+.old-todo-open{
+    overflow: hidden;
+    max-height: 1000px;
+}
+
+.old-todo__panel{
+    display: flex;
+    align-items: center;
+
+}
+.old-todo__todos{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 19px;
+}
+
+.old-todo__button{
+    height: 21px;
+    width: 21px;
+    background: #F4F4F4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+    transition: transform 0.2s linear;
+}
+.old-todo__button:hover{
+    outline: 2px solid rgb(24, 130, 196);
+}
+.old-todo__button-active{
+    transition: transform 0.2s linear;
+    transform: rotate(180deg);
+}
+.old-todo__indicator{
+    width: 5px;
+    height: 40px;
+    background: #A9A9A9;
+    border-radius: 3px;
+}
+
