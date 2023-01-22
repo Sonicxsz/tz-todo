@@ -19,7 +19,7 @@ export const ColorPicker = ({color, handleChange, name}:IColorPicker) => {
                 
                 className="color-picker"  
                 size="small" 
-                variant="filled" 
+                variant="outlined" 
                 value={color} 
                 onChange={handleChange} 
                 format={format} 

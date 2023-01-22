@@ -19,6 +19,12 @@ export interface ITodo {
 export const Todo = ({ editable=true, color, description, title, complete, id, completeTodo}:ITodo) => {
     const mainText = cutText(description, 26)
     const nameText = cutText(title, 16)
+
+    const handleComplete = () => {
+        if(completeTodo){
+            completeTodo(id)
+        }
+    }
     
     return (
         <div className='todo'>
@@ -29,11 +35,7 @@ export const Todo = ({ editable=true, color, description, title, complete, id, c
                 {mainText}
             </p>
             </div>
-            <Switch editable={editable} complete={complete} completeTodo={() => {
-                if(completeTodo){
-                    completeTodo(id)
-                }
-            }} />
+            <Switch editable={editable} value={complete} setValue={handleComplete} />
         </div>
     )
 }

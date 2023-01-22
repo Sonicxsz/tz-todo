@@ -2,14 +2,11 @@ import { useContext } from 'react';
 import cn from 'classnames'
 import './settings.css'
 import SettingsIcon from '@mui/icons-material/Settings';
-import AddIcon from '@mui/icons-material/Add';
-import CommentsDisabledIcon from '@mui/icons-material/CommentsDisabled';
-import CommentIcon from '@mui/icons-material/Comment';
 import { TodoContext } from '../../context';
-
+import { Switch } from '../switch/Switch';
 
 export const Settings = () => {
-    const {showSettings, setShowSettings, showMarquee, setShowMarquee, showModal, setShowModal} = useContext(TodoContext)
+    const {showSettings, setShowSettings, showMarquee, setShowMarquee} = useContext(TodoContext)
 
     const handleClickSettings = () => {
         if(setShowSettings){
@@ -23,26 +20,16 @@ export const Settings = () => {
             handleClickSettings()
         }
     }
-    const handleClickModal = () => {
-        if(setShowModal){
-            setShowModal(!showModal)
-            handleClickSettings()
-        }
-    }
+   
     return(
         <div className='settings'>
             <button onClick={handleClickSettings} className='settings__button'>
-                            <SettingsIcon fontSize='large' color='inherit'/>
+                    <SettingsIcon fontSize='large' color='inherit'/>
             </button>
-            <div className={cn('settings__items', {'settings__items-active':showSettings})}>
-                <button onClick={handleClickModal} className='items__button'><AddIcon fontSize='medium'/></button>
-                <button onClick={handleClickMarkquee} className='items__button'>
-                    {showMarquee 
-                            ? <CommentIcon fontSize='medium' color='inherit'/>
-                            : <CommentsDisabledIcon fontSize='medium' color='inherit'/>
-                    }
-                </button>
-
+            <div className={cn('settings__items', {'settings__items-active':showSettings})}>   
+                <div className='p-5'>
+                    <Switch setValue={handleClickMarkquee} value={showMarquee!}  editable={true}/> 
+                </div>
             </div>
         </div>
     )

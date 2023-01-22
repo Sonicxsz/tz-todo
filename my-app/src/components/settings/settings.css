@@ -36,34 +36,21 @@
 
 .settings__items{
     max-width: 0;
-    height: 35px;
+    height: 40px;
     position: absolute;
     right: 35px;
     top: 0;
-    background-color: #F4F4F4;;
+    background-color: #ffffff;
     z-index: 2;
     transition: max-width 0.3s ease-in;
     overflow: hidden;
     display: flex;
+    align-items: center;
     border-radius: 8px;
 }
 
 .settings__items-active{
-    max-width: 80px;
+    max-width: 160px;
     transition: max-width 0.3s ease-in;
 }
 
-.items__button{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    border: unset;
-    background-color: unset;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.2s linear;
-}
-
-.items__button:hover{
-    background-color: rgb(179, 202, 251);
-}

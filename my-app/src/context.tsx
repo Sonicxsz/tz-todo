@@ -17,9 +17,9 @@ export const TodoContext = React.createContext<Partial<IContext>>({})
 
 export const TodoProvider = ({children}:{children:React.ReactNode}) => {
     const [showToday, setShowToday] = useState(false)
-    const [showMarquee, setShowMarquee] = useState(false)
+    const [showMarquee, setShowMarquee] = useState(true)
     const [showSettings, setShowSettings] = useState(false)
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
 
     const context:IContext = {

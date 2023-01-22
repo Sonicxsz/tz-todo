@@ -12,3 +12,20 @@
     color: #F4F4F4;
 }
 
+.add__button{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 35px;
+    height: 35px;
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s linear;
+    border-radius: 50%;
+}
+
+.add__button:hover{
+    background-color: rgb(179, 202, 251);
+}

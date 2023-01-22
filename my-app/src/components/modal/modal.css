@@ -31,9 +31,7 @@
     background: rgb(255, 255, 255);
 }
 
-.modal__input:focus{
-    outline: 2px solid rgb(3, 132, 201);
-}
+
 
 .modal span{
     color: white;

@@ -27,6 +27,8 @@ function App() {
       })
       setTodos(newTodos)
   }
+
+
   const addTodo = (todo: ITodo) => {
     const isExist = todos.find(item => {
       if(item.date === date){
@@ -55,13 +57,13 @@ function App() {
     <TodoProvider>
       <div className="App">
        <div className='todo-wrapper'>
-       <Header name="To Do" />
-       <Modal addTodo={addTodo}/>
-        <Controller />
-          {todos.map(item => {
-            return item.date === date 
-                  ? <TodayList completeTodo={completeTodo} key={item.date}  date={item.date} todos={item.todos}/> 
-                  : <OldList key={item.date} date={item.date} todos={item.todos} />
+        <Header name="To Do" />
+        <Modal addTodo={addTodo}/>
+          <Controller />
+            {todos.map(item => {
+              return item.date === date 
+                    ? <TodayList completeTodo={completeTodo} key={item.date} todos={item.todos}/> 
+                    : <OldList key={item.date} date={item.date} todos={item.todos} />
           })}
        </div>
         <Markquee /> 

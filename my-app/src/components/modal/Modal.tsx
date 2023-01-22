@@ -24,8 +24,10 @@ export const Modal = ({addTodo}:{addTodo: (todo:ITodo) => void}) => {
     const handleChangeColor = (newValue: string) => {
         setColor(newValue)
     }
-
+    const readyForm = title.length >= 2 && description.length >= 2
+    
     const handleAddTodo = () => {
+       if(readyForm){
         const todo:ITodo = {
             id: nanoid(),
             title,
@@ -37,6 +39,7 @@ export const Modal = ({addTodo}:{addTodo: (todo:ITodo) => void}) => {
         setTitle('')
         setDescription('')
         handleClose()
+       }
     }
 
     return(
@@ -66,7 +69,7 @@ export const Modal = ({addTodo}:{addTodo: (todo:ITodo) => void}) => {
                 onClick={handleClose}
                 variant="contained" 
                 color="error">Cancel</Button>
-                <Button onClick={handleAddTodo} variant="contained" endIcon={<SendIcon />}>Add</Button>
+                <Button disabled={!readyForm} onClick={handleAddTodo} variant="contained" endIcon={<SendIcon />}>Add</Button>
             </div>
 
         </div>
