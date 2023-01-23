@@ -19,7 +19,7 @@ export const Switch = ({value, setValue, editable}: Iswitch) => {
 
 	return (
 		<div onClick={handleSwitch}
-			className={cn('switch', {'active-background': value, 'switch-editable': !editable})}>
+			className={cn('switch', {'active-background': value, switchEditable: !editable})}>
 			<div className={cn('switch__thumb', {'active-thumb': value})}>
 				{Icon}
 			</div>

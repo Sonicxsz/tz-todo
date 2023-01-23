@@ -17,9 +17,7 @@ export const Modal = ({addTodo, deleteTodo}: Imodal) => {
 
 	return (
 		<div className={cn('modal', {'modal-active': showModal})}>
-			<div className='modal__content'>
-				{Component}
-			</div>
+			{Component}
 		</div>
 	);
 };

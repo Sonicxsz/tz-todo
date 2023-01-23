@@ -41,7 +41,7 @@ export const AddModal = ({addTodo}: {addTodo: (todo: Itodo) => void}) => {
 	};
 
 	return (
-		<>
+		<div className='modal__content'>
 			<Input
 				fullWidth={true}
 				className='modal__input'
@@ -77,6 +77,6 @@ export const AddModal = ({addTodo}: {addTodo: (todo: Itodo) => void}) => {
 					variant='contained'
 					endIcon={<SendIcon />}>Add</Button>
 			</div>
-		</>
+		</div>
 	);
 };

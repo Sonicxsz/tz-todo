@@ -62,7 +62,6 @@ function App() {
 		<TodoProvider>
 			<div className='App'>
 				<div className='todo-wrapper'>
-
 					<Header name='To Do' />
 					<Modal addTodo={addTodo} deleteTodo={deleteTodo}/>
 
