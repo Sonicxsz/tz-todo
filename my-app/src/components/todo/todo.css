@@ -9,6 +9,7 @@
     flex-direction: column;
     margin-right: auto;
     align-items:flex-start;
+    cursor: pointer;
 }
 .todo__description{
     font-size: 14px;
