@@ -1,8 +1,8 @@
+import {useContext} from 'react';
+import {useQuery} from 'react-query';
 import cn from 'classnames';
 import Marquee from 'react-fast-marquee';
-import {useQuery} from 'react-query';
 import './markquee.css';
-import {useContext} from 'react';
 import {TodoContext} from '../../context';
 import {newsService} from '../../services/news.service';
 

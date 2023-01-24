@@ -20,7 +20,6 @@ export const Todo = ({editable = true, color, description, title, complete, id, 
 	const {setActiveTodo, setModalType, showModal, setShowModal} = useContext(TodoContext);
 	const mainText = cutText(description, 26);
 	const nameText = cutText(title, 16);
-
 	const handleComplete = () => {
 		if (completeTodo) {
 			completeTodo(id);

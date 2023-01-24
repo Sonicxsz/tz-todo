@@ -9,9 +9,9 @@ import {TodoProvider} from './context';
 import {type IinitialState, initialTodos} from './data';
 import {Modal} from './components/modal/Modal';
 import {type Itodo} from './components/todo/Todo';
+
 function App() {
 	const [todos, setTodos] = useState<IinitialState[]>(initialTodos);
-
 	const date = getDate();
 
 	const completeTodo = (id: string) => {
@@ -42,6 +42,7 @@ function App() {
 
 			return false;
 		});
+
 		if (isExist) {
 			const newTodos = todos.map(item => {
 				if (item.date === date) {
