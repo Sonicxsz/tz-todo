@@ -1,4 +1,4 @@
-import {useState, useCallback} from 'react';
+import {useState, useMemo} from 'react';
 import {Header} from './components/header/Header';
 import {OldList} from './components/oldList/OldList';
 import {TodayList} from './components/todayList/TodayList';
@@ -59,17 +59,18 @@ function App() {
 		}
 	};
 
+	const todoLists = useMemo(() => todos.map(item => item.date === date && item.todos.length > 0
+		? <TodayList completeTodo={completeTodo} key={item.date} todos={item.todos}/>
+		: item.todos.length > 0 && <OldList key={item.date} date={item.date} todos={item.todos} />), [todos]);
+
 	return (
 		<TodoProvider>
 			<div className='App'>
 				<div className='todo-wrapper'>
 					<Header name='To Do' />
 					<Modal addTodo={addTodo} deleteTodo={deleteTodo}/>
-
 					<Controller />
-					{todos.map(item => item.date === date && item.todos.length > 0
-						? <TodayList completeTodo={completeTodo} key={item.date} todos={item.todos}/>
-						: item.todos.length > 0 && <OldList key={item.date} date={item.date} todos={item.todos} />)}
+					{todoLists}
 				</div>
 				<Markquee />
 			</div>
