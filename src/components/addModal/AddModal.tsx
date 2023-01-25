@@ -44,7 +44,6 @@ export const AddModal = ({addTodo}: {addTodo: (todo: Itodo) => void}) => {
 		<div className='modal__content'>
 			<Input
 				fullWidth={true}
-				className='modal__input'
 				placeholder='enter title'
 				value={title}
 				onChange={event => {

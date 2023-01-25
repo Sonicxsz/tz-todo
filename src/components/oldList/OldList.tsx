@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import {useState} from 'react';
+import {useState, useMemo} from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './oldList.css';
 import {Indicator} from '../indicator/Indecator';
@@ -18,6 +18,14 @@ export const OldList = ({date, todos}: IoldTodo) => {
 		setShowTodos(!showTodos);
 	};
 
+	const todoComponents = useMemo(() => todos.map(item => <Todo key={item.id}
+		editable={false}
+		id={item.id}
+		title={item.title}
+		color={item.color}
+		description={item.description}
+		complete={item.complete} />), [todos]);
+
 	return (
 		<div className={cn('old-todo', {'old-todo-open': showTodos})}>
 			<div className='old-todo__panel'>
@@ -29,13 +37,7 @@ export const OldList = ({date, todos}: IoldTodo) => {
 				</div>
 			</div>
 			{ showTodos && <div className='old-todo__todos'>
-				{todos.map(item => <Todo key={item.id}
-					editable={false}
-					id={item.id}
-					title={item.title}
-					color={item.color}
-					description={item.description}
-					complete={item.complete} />)}
+				{todoComponents}
 			</div> }
 		</div>
 	);

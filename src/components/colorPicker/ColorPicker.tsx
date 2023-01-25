@@ -1,8 +1,4 @@
-import './colorPicker.css';
-import {
-	MuiColorInput,
-	type MuiColorInputFormat,
-} from 'mui-color-input';
+import {MuiColorInput, type MuiColorInputFormat} from 'mui-color-input';
 
 type IcolorPicker = {
 	color: string;
@@ -15,7 +11,6 @@ export const ColorPicker = ({color, handleChange, name}: IcolorPicker) => {
 	return (<>
 		<MuiColorInput
 			fullWidth
-			className='color-picker'
 			size='small'
 			variant='outlined'
 			value={color}

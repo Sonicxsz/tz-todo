@@ -1,5 +1,8 @@
 import './indecator.css';
 
-export const Indicator = ({color = '#A9A9A9'}: {color?: string}) => (
+type Iindicator = {
+	color?: string;
+};
+export const Indicator = ({color = '#A9A9A9'}: Iindicator) => (
 	<div className='indicator' style={{backgroundColor: color}}></div>
 );

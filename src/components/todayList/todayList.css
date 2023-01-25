@@ -1,4 +1,4 @@
-.newTodo{
+.today-list{
     display: flex;
     flex-direction: column;
     padding: 16px 27px 16px 17px;

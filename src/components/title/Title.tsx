@@ -1,6 +1,11 @@
 import './title.css';
 import cn from 'classnames';
 
-export const Title = ({title, completed}: {title: string; completed?: boolean}) => (
+type Ititle = {
+	title: string;
+	completed?: boolean;
+};
+
+export const Title = ({title, completed}: Ititle) => (
 	<h2 className={cn('title', {'title-completed': completed})}>{title}</h2>
 );
