@@ -59,9 +59,10 @@ function App() {
 		}
 	};
 
-	const todoLists = useMemo(() => todos.map(item => item.date === date && item.todos.length > 0
-		? <TodayList completeTodo={completeTodo} key={item.date} todos={item.todos}/>
-		: item.todos.length > 0 && <OldList key={item.date} date={item.date} todos={item.todos} />), [todos]);
+	const todoLists = useMemo(() => todos.filter(item => item.todos.length > 0)
+		.map(item => item.date === date
+			? <TodayList completeTodo={completeTodo} key={item.date} todos={item.todos}/>
+			: <OldList key={item.date} date={item.date} todos={item.todos} />), [todos]);
 
 	return (
 		<TodoProvider>
