@@ -1,16 +1,14 @@
-import {useContext} from 'react';
+
 import {Checkbox} from '@mui/material';
 import {grey} from '@mui/material/colors';
 import {Title} from '../title/Title';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import './controller.css';
 
 export const Controller = () => {
-	const {showToday, setShowToday} = useContext(TodoContext);
+	const {showToday, setShowToday} = useTodoContext();
 	const handleChange = () => {
-		if (setShowToday) {
-			setShowToday(!showToday);
-		}
+		setShowToday(!showToday);
 	};
 
 	return (

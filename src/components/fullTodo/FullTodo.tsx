@@ -1,6 +1,5 @@
 import {Button} from '@mui/material';
-import {useContext} from 'react';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import {type Itodo} from '../todo/Todo';
 import './fullTodo.css';
 import Card from '@mui/material/Card';
@@ -10,13 +9,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export const FullTodo = ({deleteTodo}: {deleteTodo: (id: string) => void}) => {
-	const {showModal, activeTodo, setShowModal} = useContext(TodoContext);
+	const {activeTodo, setShowModal} = useTodoContext();
 
 	const {title, description, id, color} = activeTodo as Itodo;
 	const handleClose = () => {
-		if (setShowModal) {
-			setShowModal(false);
-		}
+		setShowModal(false);
 	};
 
 	const handleDelete = () => {

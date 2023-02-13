@@ -1,5 +1,5 @@
-import {useContext} from 'react';
-import {TodoContext} from '../../context';
+
+import {useTodoContext} from '../../context';
 import './todo.css';
 import {Indicator} from '../indicator/Indecator';
 import {Switch} from '../switch/Switch';
@@ -17,7 +17,7 @@ export type Itodo = {
 };
 
 export const Todo = ({editable = true, color, description, title, complete, id, completeTodo}: Itodo) => {
-	const {setActiveTodo, setModalType, showModal, setShowModal} = useContext(TodoContext);
+	const {setActiveTodo, setModalType, showModal, setShowModal} = useTodoContext();
 	const mainText = cutText(description, 26);
 	const nameText = cutText(title, 16);
 

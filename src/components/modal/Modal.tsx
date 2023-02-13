@@ -1,7 +1,6 @@
 import {AddModal} from '../addModal/AddModal';
-import {useContext} from 'react';
 import cn from 'classnames';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import './modal.css';
 import {type Itodo} from '../todo/Todo';
 import {FullTodo} from '../fullTodo/FullTodo';
@@ -12,7 +11,7 @@ type Imodal = {
 };
 
 export const Modal = ({addTodo, deleteTodo}: Imodal) => {
-	const {showModal, modalType} = useContext(TodoContext);
+	const {showModal, modalType} = useTodoContext();
 	const Component = modalType === 'addTodo' ? <AddModal addTodo={addTodo} /> : <FullTodo deleteTodo={deleteTodo}/>;
 
 	return (

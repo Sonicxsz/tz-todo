@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {type Itodo} from './components/todo/Todo';
 
 type Icontext = {
@@ -17,7 +17,9 @@ type Icontext = {
 
 };
 
-export const TodoContext = React.createContext<Partial<Icontext>>({});
+const TodoContext = React.createContext<Icontext | undefined>(undefined);
+
+export const AppProvider = TodoContext.Provider;
 
 export const TodoProvider = ({children}: {children: React.ReactNode}) => {
 	const [showToday, setShowToday] = useState(false);
@@ -44,5 +46,14 @@ export const TodoProvider = ({children}: {children: React.ReactNode}) => {
 	return <TodoContext.Provider value={context}>
 		{children}
 	</TodoContext.Provider>;
+};
+
+export const useTodoContext = () => {
+	const data = useContext(TodoContext);
+	if (!data) {
+		throw new Error('Can not use `TodoContext` outside of the `TodoProvider`');
+	}
+
+	return data;
 };
 

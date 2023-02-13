@@ -1,24 +1,20 @@
-import {useContext} from 'react';
+
 import cn from 'classnames';
 import './settings.css';
 import SettingsIcon from '@mui/icons-material/Settings';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import {Switch} from '../switch/Switch';
 
 export const Settings = () => {
-	const {showSettings, setShowSettings, showMarquee, setShowMarquee} = useContext(TodoContext);
+	const {showSettings, setShowSettings, showMarquee, setShowMarquee} = useTodoContext();
 
 	const handleClickSettings = () => {
-		if (setShowSettings) {
-			setShowSettings(!showSettings);
-		}
+		setShowSettings(!showSettings);
 	};
 
 	const handleClickMarkquee = () => {
-		if (setShowMarquee) {
-			setShowMarquee(!showMarquee);
-			handleClickSettings();
-		}
+		setShowMarquee(!showMarquee);
+		handleClickSettings();
 	};
 
 	return (
@@ -28,7 +24,7 @@ export const Settings = () => {
 			</button>
 			<div className={cn('settings__items', {'settings__items-active': showSettings})}>
 				<div className='p-5'>
-					<Switch setValue={handleClickMarkquee} value={showMarquee!} editable={true}/>
+					<Switch setValue={handleClickMarkquee} value={showMarquee} editable={true}/>
 				</div>
 			</div>
 		</div>

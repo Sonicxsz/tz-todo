@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import './header.css';
 import {Settings} from '../settings/settings';
 import {Fab} from '@mui/material';
@@ -10,13 +10,11 @@ type Iheader = {
 };
 
 export const Header = ({name}: Iheader) => {
-	const {showModal, setShowModal, setModalType} = useContext(TodoContext);
+	const {showModal, setShowModal, setModalType} = useTodoContext();
 
 	const handleClickModal = () => {
-		if (setShowModal && setModalType) {
-			setShowModal(!showModal);
-			setModalType('addTodo');
-		}
+		setShowModal(!showModal);
+		setModalType('addTodo');
 	};
 
 	return (

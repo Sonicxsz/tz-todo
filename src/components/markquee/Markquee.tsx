@@ -3,7 +3,7 @@ import {useQuery} from 'react-query';
 import cn from 'classnames';
 import Marquee from 'react-fast-marquee';
 import './markquee.css';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 import {newsService} from '../../services/news.service';
 
 type Idata = {
@@ -12,7 +12,7 @@ type Idata = {
 };
 
 export const Markquee = () => {
-	const {showMarquee} = useContext(TodoContext);
+	const {showMarquee} = useTodoContext();
 	const {isLoading, data, isError} = useQuery('news data', async () => newsService.getAllNews());
 
 	const articles = data?.data.articles as Idata[];

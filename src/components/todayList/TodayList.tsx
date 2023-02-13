@@ -1,7 +1,7 @@
-import {useContext, useMemo} from 'react';
+import {useMemo} from 'react';
 import './todayList.css';
 import {Todo, type Itodo} from '../todo/Todo';
-import {TodoContext} from '../../context';
+import {useTodoContext} from '../../context';
 
 type InewTodo = {
 	todos: Itodo[];
@@ -9,7 +9,7 @@ type InewTodo = {
 };
 
 export const TodayList = ({todos, completeTodo}: InewTodo) => {
-	const {showToday} = useContext(TodoContext);
+	const {showToday} = useTodoContext();
 
 	const todoComponents = useMemo(() => todos.map(item => <Todo
 		completeTodo={completeTodo}
